@@ -15,17 +15,37 @@ export default function Home() {
           <span className="text-gray-500">Grey Chair</span>
           <span className="font-semibold">$19</span>
         </div>
+        <ul>
+          {[1, 2, 3, 4].map((i) => (
+            <div
+              key={i}
+              className="flex justify-between my-2 odd:bg-blue-50 even:bg-yellow-50 first:bg-teal-50 last:bg-amber-50"
+            >
+              <span className="text-gray-500">Grey Chair</span>
+              <span className="font-semibold">$19</span>
+            </div>
+          ))}
+        </ul>
+        <ul>
+          {["a", "b", "c", ""].map((c, i) => (
+            <li className="bg-red-500 py-2 empty:hidden" key={i}>
+              {c}
+            </li>
+          ))}
+        </ul>
         <div className="flex justify-between mt-2 pt-2 border-t-2 border-dashed">
           <span>Total</span>
           <span className="font-semibold">$10</span>
         </div>
-        <div
-          className="mt-5 bg-blue-500 text-white p-3
-          text-center rounded-xl w-3/4 mx-auto
+        <button
+          className="block mt-5 bg-blue-500 text-white p-3
+          text-center rounded-xl w-3/4 mx-auto 
+          hover:bg-teal-500 hover:text-black
+          active:bg-yellow-500 focus:bg-red-500
          "
         >
           Checkout
-        </div>
+        </button>
       </div>
       <div className="bg-white overflow-hidden rounded-3xl shadow-xl">
         <div className="bg-blue-500 p-6 pb-14">
@@ -57,15 +77,18 @@ export default function Home() {
             <span className="shadow-xl p-2 rounded-md">💖</span>
           </div>
         </div>
-        <div className="bg-zinc-400 h-72 mb-5" />
+        <img
+          className="h-72 mb-5 rounded-lg"
+          src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2758&q=80"
+        />
         <div className="flex flex-col">
           <span className="font-medium text-xl">Swoon Lounge</span>
           <span className="text-xs text-gray-500">Chair</span>
           <div className="mt-3 mb-5 flex justify-between items-center">
-            <div>
-              <input type="radio" />
-              <input type="radio" />
-              <input type="radio" />
+            <div className="space-x-2">
+              <button className="w-5 h-5 rounded-full bg-yellow-500 focus:ring-2 ring-offset-2 ring-yellow-500 transition" />
+              <button className="w-5 h-5 rounded-full bg-indigo-500 focus:ring-2 ring-offset-2 ring-indigo-500 transition" />
+              <button className="w-5 h-5 rounded-full bg-teal-500 focus:ring-2 ring-offset-2 ring-teal-500 transition" />
             </div>
             <div className="flex items-center space-x-5">
               <button className=" rounded-lg bg-blue-200 flex justify-center items-center aspect-square w-8 text-xl text-gray-500">
