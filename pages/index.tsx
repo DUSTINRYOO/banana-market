@@ -5,6 +5,9 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <div className="bg-slate-400 xl:place-content-center py-20 px-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 min-h-screen">
+      <div className="dark:md:hover:bg-teal-400 bg-[url('/vercel.svg')]">
+        <h2 className="text-[200px] text-[#000]">Hello</h2>
+      </div>
       <div className="bg-white dark:bg-black flex flex-col justify-between p-6 rounded-3xl shadow-xl">
         <span className="font-semibold dark:text-white text-2xl">
           Select Item
