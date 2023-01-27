@@ -1,13 +1,19 @@
+import useUser from "@/libs/client/useUser";
 import { Inter } from "@next/font/google";
 import type { NextPage } from "next";
+import Head from "next/head";
 import FloatingButton from "../components/floating-button";
 import Item from "../components/item";
 import Layout from "../components/layout";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const { user, isLoading } = useUser();
   return (
     <Layout title="홈" hasTabBar>
+      <Head>
+        <title>Home</title>
+      </Head>
       <div className="flex flex-col space-y-5 divide-y">
         {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((_, i) => (
           <Item
